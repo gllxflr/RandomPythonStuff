@@ -73,8 +73,40 @@ def selection(list):
         list.insert(0,list.pop(biggest))
     return list
 
+# Quick Sort
+'''
+Quick Sort involves taking a random pivot within the list and splitting
+the list into two sublists, one with values lower than the pivot value
+and the other with values higher. It then does this recursively, until
+the number of items in the smallest sublists are one each. From here on,
+it solves the list from the bottom upwards, using the same method. Once
+it reaches the top, the list is solved.
+'''
+def quick(list):
+    pass # TODO
+
+# Gnome Sort
+# Commenting and description is TODO
+def gnome(list):
+    step = 0
+    while step < len(list):
+        if step < 1:
+            step = 1
+        if list[step] < list[step-1]:
+            list.insert(step-1,list.pop(step))
+            step -= 1
+        else:
+            step += 1
+    return list
+
+
 # Fake python shell if ran directly
 if __name__ == "__main__":
     while True:
-        print("Sorting ready")
-        print(eval(input(">>> ")))
+        try:
+            print("Sorting ready")
+            print(eval(input(">>> ")))
+        except KeyboardInterrupt:
+            print("Cancelled")
+        else:
+            print("Error")
